@@ -166,11 +166,23 @@ router.post('/login', (req, res) => {
 		let test = bcrypt.compareSync(req.body.MdpLogin, user.Mdp);
 		console.log("BCRYPT TEST :" + test);
 		if(test){
-			req.session.id = user.Id;
-			var sess= req.session.id;
-			res.status(200).send({ test,sess});
-			console.log("RES");
-			console.log(sess);
+			var sess = req.session;
+			console.log("before", sess);
+			   if(sess.views){
+				  sess.views++
+				  req.session.save();
+				  console.log("Tu as visité la pages " +sess.views + " fois l'ami");
+			   } else {
+				  sess.views=1;
+				  req.session.save();
+				 console.log("Et c'est ta première fois ici , ravie de te rencontrer!");
+			   }
+			   console.log("after", sess);
+				req.session.id = user.Id;
+				//var sess= req.session.id;
+				res.status(200).send({ test,sess});
+				console.log("RES");
+				console.log(sess);
 
 		}
 		else {
