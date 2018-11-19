@@ -34,15 +34,6 @@ app.use(function(req, res, next) {
 });
 
 
-app.get('/', function(req, res){
-   if(req.session.page_views){
-      req.session.page_views++;
-      res.send("You visited this page " + req.session.page_views + " times");
-   } else {
-      req.session.page_views = 1;
-      res.send("Welcome to this page for the first time!");
-   }
-});
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
