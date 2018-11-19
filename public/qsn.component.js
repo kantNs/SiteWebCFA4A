@@ -10,7 +10,7 @@
   Notre binome est composé de :</p></br>
   <p> NESARATNAM Kantharuban</p></br>
   <p> VERDY Sylvain</p></br>
-  <p><img src="/assets/logo.png" alt="Logo" width="300" height="200"></p></br>
+  <p><img src="/assets/logo.jpg" alt="Logo" width="300" height="200"></p></br>
 </section>
   `
 
